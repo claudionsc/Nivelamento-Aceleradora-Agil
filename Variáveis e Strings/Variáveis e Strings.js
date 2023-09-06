@@ -18,16 +18,15 @@
 const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)";
 
 const sliceWords =  pokemon.split(",");
-const pikachu = sliceWords[0].replace("p", "P")
+const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
+const ability = sliceWords[3].split('-')
 
 const obj ={
-    "Name": sliceWords[0],
-    "Lv": sliceWords[1].trim(), "- Type": sliceWords[2].toUpperCase(0),
-    "Ability": sliceWords[3].trim(),
-    // "Attacks":
-    //     - sliceWords[],
-    //     - Quick attack
-    //     - Thunder
+    "name": capitalize(sliceWords[0]),
+    "lv": sliceWords[1],
+    "type": sliceWords[2].toUpperCase(),
+    // "ability": 
+    // "Attacks": [sliceWords[],]
 
     // "Places":
     //     - veridian
@@ -36,5 +35,5 @@ const obj ={
 }
 
 
-console.log(pikachu);
+console.log(ability);
 // console.log(sliceWords);
