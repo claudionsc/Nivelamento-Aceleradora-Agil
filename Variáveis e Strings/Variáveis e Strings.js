@@ -21,7 +21,8 @@ const sliceWords = pokemon.split(" ");
 let novoArrayPokemon = [];
 for (let i = 0; i < sliceWords.length; i++) {
   if(sliceWords[i] == "-") {
-      sliceWords[i] = "";
+    //   sliceWords[i] = "";
+      sliceWords.slice(i, i + 1)
   } 
   else if (sliceWords[i].includes(")")) {
     sliceWords[i] = sliceWords[i].replaceAll(")", " ")
