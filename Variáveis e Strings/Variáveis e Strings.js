@@ -17,6 +17,14 @@
 
 const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)";
 
+// for(let i = 0; i < pokemon.length; i++){
+//     if(pokemon[i] === "," || "(" || ")" || "-" ){
+//         pokemon[i] = " ";
+
+//     }
+
+//     console.log(pokemon)
+// }
 
 function remover(){
     if(pokemon.includes("," || "(" || ")" || "-" )){
@@ -62,5 +70,5 @@ const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 // console.log(obj.places);
 // console.log(sliceWords);
 let lista = remover()
-console.log(lista)
+console.log(pokemon)
 
