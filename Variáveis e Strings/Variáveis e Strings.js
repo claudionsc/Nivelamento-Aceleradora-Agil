@@ -18,32 +18,41 @@
 const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)";
 const sliceWords = pokemon.split(" ");
 // const sliceAttacks = sliceWords[3].split("-")
-
+let novoArrayPokemon = [];
 for (let i = 0; i < sliceWords.length; i++) {
-  // if(sliceWords[i] == "-" ){
-  //     sliceWords[i] = " ";
-  console.log(sliceWords[i])
-  // } else {
-  //   return sliceWords
-  // }
-
-}
-console.log( sliceWords)
-
-function remover(s) {
-  if (pokemon.includes("," || "(" || ")" || "-")) {
-    let novaLista = pokemon.replaceAll("(", " ")
-    let listaLista = novaLista.replaceAll("-", " ")
-    let outraLista = listaLista.replaceAll(")", " ")
-    outraLista.trim()
-    // let maisLista = outraLista.replaceAll("  ", ",")
-    // maisLista.split(" ")
-    //  maisLista.split(",")
-    return
+  if(sliceWords[i] == "-") {
+      sliceWords[i] = "";
+  } 
+  else if (sliceWords[i].includes(")")) {
+    sliceWords[i] = sliceWords[i].replaceAll(")", " ")
+  }  
+  else if (sliceWords[i].includes("(")) {
+    sliceWords[i] = sliceWords[i].replaceAll("(", " ")
   }
-
-
+  else if (sliceWords[i].includes(",")) {
+    sliceWords[i] = sliceWords[i].replaceAll(",", " ")
+  }
+  // else if (sliceWords[i].includes("")) {
+  //   sliceWords[i] = sliceWords[i].trim()
+  // }
+  novoArrayPokemon.push(sliceWords[i])
+  // } else {
+  //   return sliceWords+
+  // }
 }
+console.log(novoArrayPokemon)
+// function remover(s) {
+//   if (pokemon.includes("," || "(" || ")" || "-")) {
+//     let novaLista = pokemon.replaceAll("(", " ")
+//     let listaLista = novaLista.replaceAll("-", " ")
+//     let outraLista = listaLista.replaceAll(")", " ")
+//     outraLista.trim()
+//     // let maisLista = outraLista.replaceAll("  ", ",")
+//     // maisLista.split(" ")
+//     //  maisLista.split(",")
+//     return
+//   }
+// }
 
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
