@@ -17,28 +17,45 @@
 
 const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)";
 
-const sliceWords =  pokemon.split(",");
+
+function remover(){
+    if(pokemon.includes("," || "(" || ")" || "-" )){
+        let novaLista = pokemon.replaceAll("(", " ") 
+        novaLista = pokemon.replaceAll(")", " ")
+        novaLista = pokemon.replaceAll("-", " ")
+
+        return novaLista
+    }
+
+
+}
+
+const sliceWords =  pokemon.split(" ");
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
-function removeParenteses(arr) {
-    const novoArr =  arr.slice(2, -1)
-    return novoArr
-}
+// function removeParenteses(arr) {
+//     const novoArr =  arr.slice(2, -1)
+//     return novoArr
+// }
 
-const obj ={
-    "name": capitalize(sliceWords[0]),
-    "lv": sliceWords[1],
-    "type": sliceWords[2].toUpperCase(),
-    "ability": sliceWords[4].toLowerCase(),
-    "attacks": removeParenteses(sliceWords[3]).split('-'),
-    "places": removeParenteses(sliceWords[5]).split(',')
 
-    // "Places":
-    //     - veridian
-    //     - pallet
-    //     - cerulean
-}
+
+// const obj ={
+//     "name": capitalize(sliceWords[0]),
+//     "lv": sliceWords[1],
+//     "type": sliceWords[2].toUpperCase(),
+//     "ability": sliceWords[4].toLowerCase(),
+//     "attacks": removeParenteses(sliceWords[3]).split('-'),
+//     "places": removeParenteses(sliceWords[5]).split(',')
+
+//     // "Places":
+//     //     - veridian
+//     //     - pallet
+//     //     - cerulean
+// }
 
 
 // console.log(removeParenteses(sliceWords[3]));
-console.log(obj.places);
+// console.log(obj.places);
+// console.log(sliceWords);
+console.log(remover())
