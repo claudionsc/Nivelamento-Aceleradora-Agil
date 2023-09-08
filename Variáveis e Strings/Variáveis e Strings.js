@@ -20,18 +20,9 @@ const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), S
 const sliceWords =  pokemon.split(",");
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
-const attacks = sliceWords[3].split('-')
-
-attacks[0].slice(1, -1)
-
-const primeira = attacks[0].replace("(", " ")
-
-const removeParenteses = (p, arr) => {
-    arr[p].slice(1, -1)
-    s = s[0].replace("(", " ")
-    s = s[s.length - 1].replace(")", " ")
-    // console.log(s[0])
-    return s;
+function removeParenteses(arr) {
+    const novoArr =  arr.slice(2, -1)
+    return novoArr
 }
 
 const obj ={
@@ -39,7 +30,8 @@ const obj ={
     "lv": sliceWords[1],
     "type": sliceWords[2].toUpperCase(),
     "ability": sliceWords[4].toLowerCase(),
-    // "attacks": removeParenteses(attacks),
+    "attacks": removeParenteses(sliceWords[3]).split('-'),
+    "places": removeParenteses(sliceWords[5]).split(',')
 
     // "Places":
     //     - veridian
@@ -48,5 +40,5 @@ const obj ={
 }
 
 
-console.log(removeParenteses(pokemon[3]));
-// console.log(sliceWords);
+// console.log(removeParenteses(sliceWords[3]));
+console.log(obj.places);
