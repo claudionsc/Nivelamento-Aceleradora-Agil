@@ -21,16 +21,19 @@ const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), S
 function remover(){
     if(pokemon.includes("," || "(" || ")" || "-" )){
         let novaLista = pokemon.replaceAll("(", " ") 
-        novaLista = pokemon.replaceAll(")", " ")
-        novaLista = pokemon.replaceAll("-", " ")
-
-        return novaLista
+        let listaLista = novaLista.replaceAll("-", " ")
+        let outraLista = listaLista.replaceAll(")", " ")
+        outraLista.trim()
+        // let maisLista = outraLista.replaceAll("  ", ",")
+        // maisLista.split(" ")
+        //  maisLista.split(",")
+         return
     }
 
 
 }
 
-const sliceWords =  pokemon.split(" ");
+// const sliceWords =  pokemon.split(" ");
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
 // function removeParenteses(arr) {
@@ -58,4 +61,6 @@ const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 // console.log(removeParenteses(sliceWords[3]));
 // console.log(obj.places);
 // console.log(sliceWords);
-console.log(remover())
+let lista = remover()
+console.log(lista)
+
