@@ -16,32 +16,35 @@
 */
 
 const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)";
+const sliceWords = pokemon.split(" ");
+// const sliceAttacks = sliceWords[3].split("-")
 
-// for(let i = 0; i < pokemon.length; i++){
-//     if(pokemon[i] === "," || "(" || ")" || "-" ){
-//         pokemon[i] = " ";
+for (let i = 0; i < sliceWords.length; i++) {
+  // if(sliceWords[i] == "-" ){
+  //     sliceWords[i] = " ";
+  console.log(sliceWords[i])
+  // } else {
+  //   return sliceWords
+  // }
 
-//     }
+}
+console.log( sliceWords)
 
-//     console.log(pokemon)
-// }
-
-function remover(){
-    if(pokemon.includes("," || "(" || ")" || "-" )){
-        let novaLista = pokemon.replaceAll("(", " ") 
-        let listaLista = novaLista.replaceAll("-", " ")
-        let outraLista = listaLista.replaceAll(")", " ")
-        outraLista.trim()
-        // let maisLista = outraLista.replaceAll("  ", ",")
-        // maisLista.split(" ")
-        //  maisLista.split(",")
-         return
-    }
+function remover(s) {
+  if (pokemon.includes("," || "(" || ")" || "-")) {
+    let novaLista = pokemon.replaceAll("(", " ")
+    let listaLista = novaLista.replaceAll("-", " ")
+    let outraLista = listaLista.replaceAll(")", " ")
+    outraLista.trim()
+    // let maisLista = outraLista.replaceAll("  ", ",")
+    // maisLista.split(" ")
+    //  maisLista.split(",")
+    return
+  }
 
 
 }
 
-// const sliceWords =  pokemon.split(" ");
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
 // function removeParenteses(arr) {
@@ -69,6 +72,5 @@ const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 // console.log(removeParenteses(sliceWords[3]));
 // console.log(obj.places);
 // console.log(sliceWords);
-let lista = remover()
-console.log(pokemon)
-
+// let lista = remover()
+// console.log(sliceWords)
