@@ -3,22 +3,23 @@ const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), S
 // let removeParentesesLeft = lowerCase.replaceAll("(", "");
 // let removeParentesesRight = removeParentesesLeft.replaceAll(")", "");
 // let removeTrace = removeParentesesRight.replaceAll("-", ",");
-let arrayModified = pokemon.split(',');
+let arrayModified = pokemon.split(' ');
 
 let newArray = [];
-let caracteres = ["(", ")", "-", ","]
+let caracteres = ["(", ")", "-"]
+let arr;
 function removeCaractere(caracteres)  {
     for (let i = 0; i < arrayModified.length; i++) {
-      for (let j = 0; j < caracteres.length; j++){
-        if(arrayModified[i].includes(caracteres[j])) {
-          const arr = arrayModified[i].replace(caracteres[j], "")
-          console.log(caracteres[j])
-          newArray.push(arr)
-            // newArray.push(arrayModified[i].replaceAll(caracteres[j], ""))
-            // console.log("Sim" + arrayModified[i])
-            console.log("no if")
-            break;
-        } 
+        for (let j = 0; j < caracteres.length; j++){
+            if(arrayModified[i].includes(caracteres[j])) {
+                arrayModified[i] = arrayModified[i].replaceAll(caracteres[j], " ")
+            }
+        if(arrayModified[i] !== " ") {
+            
+        }
+        // else {
+        //     newArray.push(arrayModified[i])
+        // }
       }
     }
     return newArray
