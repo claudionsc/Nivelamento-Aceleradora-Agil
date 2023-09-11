@@ -1,86 +1,51 @@
-/* 
-    Transforme a string pokemon no seguinte texto:
+const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)"
+// let lowerCase = pokemon.toLowerCase();
+// let removeParentesesLeft = lowerCase.replaceAll("(", "");
+// let removeParentesesRight = removeParentesesLeft.replaceAll(")", "");
+// let removeTrace = removeParentesesRight.replaceAll("-", ",");
+let arrayModified = pokemon.split(',');
 
-    Name: Pikachu
-    Lv: 3 - Type: ELETRIC
-    Ability: static
-    Attacks:
-        - Thundershock,
-        - Quick attack
-        - Thunder
-
-    Places:
-        - veridian
-        - pallet
-        - cerulean
-*/
-
-const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)";
-const sliceWords = pokemon.split(" ");
-// const sliceAttacks = sliceWords[3].split("-")
-let novoArrayPokemon = [];
-for (let i = 0; i < sliceWords.length; i++) {
-  if(sliceWords[i] == "-") {
-    //   sliceWords[i] = "";
-      sliceWords.slice(i, i + 1)
-  } 
-  else if (sliceWords[i].includes(")")) {
-    sliceWords[i] = sliceWords[i].replaceAll(")", " ")
-  }  
-  else if (sliceWords[i].includes("(")) {
-    sliceWords[i] = sliceWords[i].replaceAll("(", " ")
-  }
-  else if (sliceWords[i].includes(",")) {
-    sliceWords[i] = sliceWords[i].replaceAll(",", " ")
-  }
-  // else if (sliceWords[i].includes("")) {
-  //   sliceWords[i] = sliceWords[i].trim()
-  // }
-  novoArrayPokemon.push(sliceWords[i])
-  // } else {
-  //   return sliceWords+
-  // }
+let newArray;
+let caracteres = ["(", ")", "-", ","]
+function removeCaractere(caracteres)  {
+    for (let i = 0; i < arrayModified.length; i++) {
+      for (let j = 0; )
+        if(arrayModified[i].includes(caracteres)) {
+            newArray = arrayModified[i].replaceAll(caracteres, "")
+        }
+    }
 }
-console.log(novoArrayPokemon)
-// function remover(s) {
-//   if (pokemon.includes("," || "(" || ")" || "-")) {
-//     let novaLista = pokemon.replaceAll("(", " ")
-//     let listaLista = novaLista.replaceAll("-", " ")
-//     let outraLista = listaLista.replaceAll(")", " ")
-//     outraLista.trim()
-//     // let maisLista = outraLista.replaceAll("  ", ",")
-//     // maisLista.split(" ")
-//     //  maisLista.split(",")
-//     return
-//   }
+removeCaractere("(")
+console.log(newArray)
+
+
+// function capitalize(element, i) {
+//     let noSpaces = element.trim()
+//     let elementFormmated = noSpaces[i].toUpperCase() + noSpaces.slice(1);
+//     return elementFormmated;
 // }
 
-const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
-
-// function removeParenteses(arr) {
-//     const novoArr =  arr.slice(2, -1)
-//     return novoArr
+// const pokemonFeat = {
+//     name: capitalize(arrayModified[0], 0),
+//     lv: arrayModified[1] + " -  Type: " + arrayModified[2].toUpperCase(),
+//     ability: arrayModified[6],
+//     attacks: [capitalize(arrayModified[3], 0), capitalize(arrayModified[4], 0), capitalize(arrayModified[5], 0)],
+//     places: [arrayModified[7], arrayModified[8], arrayModified[9]]
 // }
 
+// let text = `
+//              Name: ${pokemonFeat.name}
+//              Lv: ${pokemonFeat.lv}
+//              Ability: ${pokemonFeat.ability}
+//              Attacks:
+//                 - ${pokemonFeat.attacks[0].trim()},
+//                 - ${pokemonFeat.attacks[1]}
+//                 - ${pokemonFeat.attacks[2]}
 
+//             Places:
+//                 - ${pokemonFeat.places[0].trim()}
+//                 - ${pokemonFeat.places[1].trim()}
+//                 - ${pokemonFeat.places[2].trim()}`;
 
-// const obj ={
-//     "name": capitalize(sliceWords[0]),
-//     "lv": sliceWords[1],
-//     "type": sliceWords[2].toUpperCase(),
-//     "ability": sliceWords[4].toLowerCase(),
-//     "attacks": removeParenteses(sliceWords[3]).split('-'),
-//     "places": removeParenteses(sliceWords[5]).split(',')
+// console.log(text);
 
-//     // "Places":
-//     //     - veridian
-//     //     - pallet
-//     //     - cerulean
-// }
-
-
-// console.log(removeParenteses(sliceWords[3]));
-// console.log(obj.places);
-// console.log(sliceWords);
-// let lista = remover()
-// console.log(sliceWords)
