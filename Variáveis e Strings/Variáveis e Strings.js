@@ -5,18 +5,27 @@ const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), S
 // let removeTrace = removeParentesesRight.replaceAll("-", ",");
 let arrayModified = pokemon.split(',');
 
-let newArray;
+let newArray = [];
 let caracteres = ["(", ")", "-", ","]
 function removeCaractere(caracteres)  {
     for (let i = 0; i < arrayModified.length; i++) {
-      for (let j = 0; )
-        if(arrayModified[i].includes(caracteres)) {
-            newArray = arrayModified[i].replaceAll(caracteres, "")
-        }
+      for (let j = 0; j < caracteres.length; j++){
+        if(arrayModified[i].includes(caracteres[j])) {
+          const arr = arrayModified[i].replace(caracteres[j], "")
+          console.log(caracteres[j])
+          newArray.push(arr)
+            // newArray.push(arrayModified[i].replaceAll(caracteres[j], ""))
+            // console.log("Sim" + arrayModified[i])
+            console.log("no if")
+            break;
+        } 
+      }
     }
+    return newArray
 }
-removeCaractere("(")
 console.log(newArray)
+removeCaractere(caracteres)
+// console.log(newArray)
 
 
 // function capitalize(element, i) {
