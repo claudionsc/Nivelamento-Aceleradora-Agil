@@ -92,4 +92,19 @@ function calcularSalario3(salarioAtual){
     return console.log(salarioLiquido)
 }
 
-calcularSalario3(1000)
+// calcularSalario3(1000)
+
+// Exerc. 1.10
+
+function calcularDiasVividos(nome, dataNascimento) {
+    const dataAtual = [12, 9, 2023];
+    const diasNaoVividos = (30 - dataAtual[0]) + ((12 - dataAtual[1]) * 30)
+    const arrDataNascimento = dataNascimento.split('/');
+    const dias = 30 - arrDataNascimento[0];
+    const meses = (12 - arrDataNascimento[1]) * 30;
+    const anos = (2023 - arrDataNascimento[2]) * 365;
+    const diasVividos = (dias + meses + anos) - diasNaoVividos;
+    return console.log(`${nome} viveu ${diasVividos} dias`);
+}
+
+calcularDiasVividos("Victor", '12/09/2023');
