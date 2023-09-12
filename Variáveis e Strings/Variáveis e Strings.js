@@ -1,18 +1,14 @@
-const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)"
-// let lowerCase = pokemon.toLowerCase();
-// let removeParentesesLeft = lowerCase.replaceAll("(", "");
-// let removeParentesesRight = removeParentesesLeft.replaceAll(")", "");
-// let removeTrace = removeParentesesRight.replaceAll("-", ",");
+const pokemon = "pikachu, 3, eletric, (thunderShock - QUICK attack - thuNder), STATIC, (VERIDIAN, CERULEAN, PALLET)";
 let arrayModified = pokemon.toLowerCase().split(' ');
-
 let newArray = [];
-let caracteres = ["(", ")", "-", ","]
+let caracteres = ["(", ")", "-", ","];
+let arr = removeCaractere(caracteres);
+
 function removeCaractere(caracteres)  {
-  
   for (let i = 0; i < arrayModified.length; i++) {
     for (let j = 0; j < caracteres.length; j++){
       if(arrayModified[i].includes(caracteres[j])) {
-        arrayModified[i] = arrayModified[i].replace(caracteres[j], "")
+        arrayModified[i] = arrayModified[i].replace(caracteres[j], "");
       } 
     }
     if(arrayModified[i] !== ""){
@@ -21,15 +17,8 @@ function removeCaractere(caracteres)  {
   }
   return newArray;
 }
-let arr = removeCaractere(caracteres);
-// console.log(arr)
 
-
-function capitalize(element, i) {
-    let noSpaces = element.trim()
-    let elementFormmated = noSpaces[i].toUpperCase() + noSpaces.slice(1);
-    return elementFormmated;
-}
+const capitalize = (element, i) => { return element[i].toUpperCase() + element.slice(1)};
 
 const pokemonFeat = {
     name: capitalize(arr[0], 0),
@@ -45,14 +34,14 @@ let text = `
              Lv: ${pokemonFeat.lv} - Type: ${pokemonFeat.type}
              Ability: ${pokemonFeat.ability}
              Attacks:
-                - ${pokemonFeat.attacks[0].trim()},
+                - ${pokemonFeat.attacks[0]},
                 - ${pokemonFeat.attacks[1]}
                 - ${pokemonFeat.attacks[2]}
 
             Places:
-                - ${pokemonFeat.places[0].trim()}
-                - ${pokemonFeat.places[1].trim()}
-                - ${pokemonFeat.places[2].trim()}`;
+                - ${pokemonFeat.places[0]}
+                - ${pokemonFeat.places[1]}
+                - ${pokemonFeat.places[2]}`;
 
 console.log(text);
 
