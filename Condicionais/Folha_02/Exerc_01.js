@@ -204,3 +204,19 @@ const calculaValorCarro = (precoFabrica, percentualLucro, percentualImpostos) =>
 // calculaValorCarro(100, 20, 10)
 
 // Exerc. 1.20
+
+const calcularHora = (horas, salMin) => {
+
+    let valorHoraTrab = salMin / 10
+    let salarioBruto = horas * valorHoraTrab
+    let imposto = salarioBruto * 3 / 100
+
+    let salarioAReceber = salarioBruto - imposto
+
+    return console.log(salarioAReceber)
+}
+
+// calcularHora(200, 1000)
+
+// Exerc. 1.21
+
