@@ -45,14 +45,14 @@ let text = `
              Lv: ${pokemonFeat.lv} - Type: ${pokemonFeat.type}
              Ability: ${pokemonFeat.ability}
              Attacks:
-                - ${pokemonFeat.attacks[0].trim()},
+                - ${pokemonFeat.attacks[0]},
                 - ${pokemonFeat.attacks[1]}
                 - ${pokemonFeat.attacks[2]}
 
             Places:
-                - ${pokemonFeat.places[0].trim()}
-                - ${pokemonFeat.places[1].trim()}
-                - ${pokemonFeat.places[2].trim()}`;
+                - ${pokemonFeat.places[0]}
+                - ${pokemonFeat.places[1]}
+                - ${pokemonFeat.places[2]}`;
 
 console.log(text);
 
