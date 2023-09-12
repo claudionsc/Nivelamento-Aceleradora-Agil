@@ -27,7 +27,6 @@ function calculaIdade(dataN){
    } else {
     maior = `A pessoa não é maior de idade, sua idade é ${idade}`
    }
-
     return console.log(maior)
 }
 

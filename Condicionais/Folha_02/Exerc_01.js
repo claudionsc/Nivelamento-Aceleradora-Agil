@@ -1,38 +1,38 @@
 // Exerc. 1.1
 function subtrair(n1, n2) {
-    return console.log(n1 - n2);
+    return console.log(n1 - n2)
 }
 
-// subtrair(10, 20);
+// subtrair(10, 20)
 
 // Exerc. 1.2
 
 function multiplicar(n1, n2, n3) {
-    return console.log(n1 * n2 * n3);
+    return console.log(n1 * n2 * n3)
 }
 
-// multiplicar(10, 20, 30);
+// multiplicar(10, 20, 30)
 
 // Exerc. 1.3
 
 function somar(n1, n2, n3, n4) {
     if(Number.isInteger(n1, n2, n3, n4)) {
-        return console.log(n1 + n2 + n3 + n4);
+        return console.log(n1 + n2 + n3 + n4)
     }
     else {
-        return console.log("insira números inteiros");
+        return console.log("insira números inteiros")
     }
 }
 
-// somar(10, 20, 30, 40);
+// somar(10, 20, 30, 40)
 
 // Exerc. 1.4
 
 function calcularMedia(a, b, c){
-    return console.log(Math.floor((a + b + c) / 3));
+    return console.log(Math.floor((a + b + c) / 3))
 }
 
-// calcularMedia(10, 5, 5);
+// calcularMedia(10, 5, 5)
 
 // Exerc. 1.5
 
@@ -48,12 +48,12 @@ function calcularPreco(etiqueta, pagamento){
 
     let preco
 
-    if(pagamento == 1){
+    if(pagamento == 1){                                      //se pagamento a vista
         preco = etiqueta - etiqueta * 10 / 100
-    } else if (pagamento == 2){
+    } else if (pagamento == 2){                            //se pagamento parcelado em 2x
         preco = etiqueta / 2
-    } else if (pagamento == 4){
-        preco = (etiqueta + etiqueta * 5 / 100) / 4
+    } else if (pagamento == 4){                          //se pagamento parcelado em 4x
+        preco = (etiqueta + etiqueta * 5 / 100) / 4     //acrescenta taxa de 5%
     }
     return console.log(preco)
 }
@@ -97,17 +97,17 @@ function calcularSalario3(salarioAtual){
 // Exerc. 1.10
 
 function calcularDiasVividos(nome, dataNascimento) {
-    const dataAtual = [12, 9, 2023];
+    const dataAtual = [12, 9, 2023]
     const diasNaoVividos = (30 - dataAtual[0]) + ((12 - dataAtual[1]) * 30)
-    const arrDataNascimento = dataNascimento.split('/');
-    const dias = 30 - arrDataNascimento[0];
-    const meses = (12 - arrDataNascimento[1]) * 30;
-    const anos = (2023 - arrDataNascimento[2]) * 365;
-    const diasVividos = (dias + meses + anos) - diasNaoVividos;
-    return console.log(`${nome} viveu ${diasVividos} dias`);
+    const arrDataNascimento = dataNascimento.split('/')
+    const dias = 30 - arrDataNascimento[0]
+    const meses = (12 - arrDataNascimento[1]) * 30
+    const anos = (2023 - arrDataNascimento[2]) * 365
+    const diasVividos = (dias + meses + anos) - diasNaoVividos
+    return console.log(`${nome} viveu ${diasVividos} dias`)
 }
 
-// calcularDiasVividos("Victor", '12/09/2023');
+// calcularDiasVividos("Victor", '12/09/2023')
 
 // Exerc. 1.11
 
@@ -130,18 +130,18 @@ function calcularCatetos(c1, c2){
 // Exerc. 1.13
 
 function calcularAreaTriangulo(base, altura) {
-    return console.log(base * altura / 2);
+    return console.log(base * altura / 2)
 }
 
-// calcularAreaTriangulo(2, 4);
+// calcularAreaTriangulo(2, 4)
 
 // Exerc. 1.14
 
 function calcularAreaCirculo(raio) {
-    return console.log(Math.PI * Math.pow(raio, 2));
+    return console.log(Math.PI * Math.pow(raio, 2))
 }
 
-// calcularAreaCirculo(4);
+// calcularAreaCirculo(4)
 
 // Exerc. 1.15
 
@@ -192,6 +192,7 @@ const cacularIdadeAnos = (anoNascimento, anoAtual) => {
 // cacularIdadeAnos(2000, 2023)
 
 // Exerc. 1.19
+
 const calcularPorcentagemm = (valor, porcentagem) => {
     return valor * porcentagem / 100
 }
@@ -205,7 +206,7 @@ const calculaValorCarro = (precoFabrica, percentualLucro, percentualImpostos) =>
 
 // Exerc. 1.20
 
-const calcularHora = (horas, salMin) => {
+const calcularValorHora = (horas, salMin) => {
 
     let valorHoraTrab = salMin / 10
     let salarioBruto = horas * valorHoraTrab
@@ -216,7 +217,17 @@ const calcularHora = (horas, salMin) => {
     return console.log(salarioAReceber)
 }
 
-// calcularHora(200, 1000)
+// calcularValorHora(200, 1000)
 
 // Exerc. 1.21
 
+const calcularHora = (hora, minutos) => {
+    const horaParaMinutos = hora * 60
+    const somaMinutos = horaParaMinutos + minutos
+    const segundos = somaMinutos * 60
+    console.log(`
+                Horas convertidas em minutos: ${horaParaMinutos},
+                minutos totais: ${somaMinutos},
+                segundos totais: ${segundos}.`)
+}
+// calcularHora(1, 5)
