@@ -115,14 +115,30 @@ function lerNomeSobrenome(sobrenome, nome){
     return console.log(`Sr.(a) ${nome} ${sobrenome}, é uma honra contar com a sua presença!`)
 }
 
-lerNomeSobrenome("Nascimento", "Claudio")
+// lerNomeSobrenome("Nascimento", "Claudio")
 
 // Exerc. 1.12
 
 function calcularCatetos(c1, c2){
 
-    let potencia = Math.sqrt(c1**2 + c2**2)
-    return console.log(potencia)
+    let hipotenusa = Math.sqrt(c1**2 + c2**2)
+    return console.log(hipotenusa)
 }
 
-calcularCatetos(2, 2)
+// calcularCatetos(2, 2)
+
+// Exerc. 1.13
+
+function calcularAreaTriangulo(base, altura) {
+    return console.log(base * altura / 2);
+}
+
+// calcularAreaTriangulo(2, 4);
+
+// Exerc. 1.14
+
+function calcularAreaCirculo(raio) {
+    return console.log(Math.PI * Math.pow(raio, 2));
+}
+
+calcularAreaCirculo(4);
