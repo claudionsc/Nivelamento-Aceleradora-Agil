@@ -107,4 +107,22 @@ function calcularDiasVividos(nome, dataNascimento) {
     return console.log(`${nome} viveu ${diasVividos} dias`);
 }
 
-calcularDiasVividos("Victor", '12/09/2023');
+// calcularDiasVividos("Victor", '12/09/2023');
+
+// Exerc. 1.11
+
+function lerNomeSobrenome(sobrenome, nome){
+    return console.log(`Sr.(a) ${nome} ${sobrenome}, é uma honra contar com a sua presença!`)
+}
+
+lerNomeSobrenome("Nascimento", "Claudio")
+
+// Exerc. 1.12
+
+function calcularCatetos(c1, c2){
+
+    let potencia = Math.sqrt(c1**2 + c2**2)
+    return console.log(potencia)
+}
+
+calcularCatetos(2, 2)
