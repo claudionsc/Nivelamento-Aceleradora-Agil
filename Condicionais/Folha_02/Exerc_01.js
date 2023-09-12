@@ -141,4 +141,40 @@ function calcularAreaCirculo(raio) {
     return console.log(Math.PI * Math.pow(raio, 2));
 }
 
-calcularAreaCirculo(4);
+// calcularAreaCirculo(4);
+
+// Exerc. 1.15
+
+function calcularNumero(a){
+
+    let quadrado = a**2
+    let cubo = a**3
+    let raizQ = Math.sqrt(a)
+    let raizC = Math.cbrt(a)
+
+    return console.log(`Número ao quadrado: ${quadrado}. Número ao cubo ${cubo}. Raiz quadrada: ${raizQ}. Raíz cúbica: ${raizC}`)
+}
+
+// calcularNumero(8)
+
+// Exerc. 1.16
+
+function elevarDoisNumeros(a, b){
+
+    return console.log(a**b)
+}
+
+// elevarDoisNumeros(5, 2)
+
+function calcularComprimentos(pes){
+
+    let polegadas = pes * 12
+    let jardas = pes / 3
+    let milhas = pes / 5280
+
+    return console.log(`
+    Conversão de ${pes} pés em: ${polegadas} polegadas, ${jardas} jardas e ${milhas} milhas
+    `)
+}
+
+calcularComprimentos(6)
