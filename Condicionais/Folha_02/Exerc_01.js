@@ -166,6 +166,8 @@ function elevarDoisNumeros(a, b){
 
 // elevarDoisNumeros(5, 2)
 
+// Exerc. 1.17
+
 function calcularComprimentos(pes){
 
     let polegadas = pes * 12
@@ -177,4 +179,28 @@ function calcularComprimentos(pes){
     `)
 }
 
-calcularComprimentos(6)
+// calcularComprimentos(6)
+
+// Exerc. 1.18
+
+const cacularIdadeAnos = (anoNascimento, anoAtual) => {
+    const idade = anoAtual - anoNascimento
+    const idadeFutura = 2050 - anoNascimento
+    console.log(`Idade: ${idade} anos, idade em 2050: ${idadeFutura} anos`)
+}
+
+// cacularIdadeAnos(2000, 2023)
+
+// Exerc. 1.19
+const calcularPorcentagemm = (valor, porcentagem) => {
+    return valor * porcentagem / 100
+}
+const calculaValorCarro = (precoFabrica, percentualLucro, percentualImpostos) => {
+    const lucro = calcularPorcentagemm(precoFabrica, percentualLucro)
+    const impostos = calcularPorcentagemm(precoFabrica, percentualImpostos)
+    const precoFinal = precoFabrica + lucro + impostos
+    console.log(`lucro: ${lucro}, impostos: ${impostos}, preço final: ${precoFinal}`)
+}
+// calculaValorCarro(100, 20, 10)
+
+// Exerc. 1.20
