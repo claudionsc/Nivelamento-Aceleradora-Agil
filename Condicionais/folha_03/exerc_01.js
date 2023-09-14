@@ -73,3 +73,41 @@ const raizCondicional = numero => {
 }
 
 // raizCondicional(-3)
+
+// Exerc. 1.7
+
+const eMultiploDe3 = numero => {
+    numero % 3 == 0 ? console.log(`${numero} é multiplo de 3`) : console.log(`${numero} não é multiplo de 3`) 
+}
+
+// eMultiploDe3(10)
+
+// Exerc. 1.8
+
+const eDivisivel = (a, b) => {
+    a % b == 0 ? console.log(`${a} é divisível por ${b}.`) : console.log(`${a} não é divisível por ${b}.`) 
+}
+
+// eDivisivel(8, 7)
+
+// Exerc. 1.9
+
+const retornarMaiorNumero = (a, b) => {
+    a > b ? 
+        console.log(`${a} é o maior e ${b} é o menor número.`) : 
+        console.log(`${b} é o maior e ${a} é o menor número.`) 
+}
+
+// retornarMaiorNumero(7, 4)
+
+// Exerc. 1.10
+
+const avaliarAutorizacaoEmprestimo = (salarioBruto, valorPrestacao) => {
+   const porcentagemSalario = salarioBruto * 30 / 100
+   valorPrestacao <= porcentagemSalario ? console.log("Empréstimo permitido.") : console.log("Empréstimo não permitido.")
+}
+
+// avaliarAutorizacaoEmprestimo(100, 30)
+
+// Exerc. 1.11
+
