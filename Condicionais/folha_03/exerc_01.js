@@ -133,14 +133,54 @@ const qualMaior = (a, b, c, d) => {
 
 // Exerc. 1.12
 
-const menorParaMaior = (a, b, c, d) => {
-  const arr = [a, b, c, d];
+const menorParaMaior = (a, b, c) => {
+  const arr = [a, b, c];
 
-  return console.log(
-    arr.sort(function (a, b) {
-      return a - b;
-    })
-  );
+  return console.log(arr.sort(function (a, b) {return a - b;}).join(" "));
 };
 
-menorParaMaior(49, 2, 9, 14);
+// menorParaMaior(49, 2, 9);
+
+// Exerc. 1.13
+
+const maiorParaMenor = (a, b, c) => {
+    const arr = [a, b, c];
+    return console.log(arr.sort(function (a, b) {return b - a;}).join(" "));
+};
+
+// maiorParaMenor(7, 20, 12)
+
+// Exerc. 1.14
+
+const verificaDivisor = (num) => {
+    let naoDivisivel = true
+
+    if(num % 2 === 0) {
+        console.log(`O numero ${num} é divisível por 2`)
+        naoDivisivel = false
+    }
+
+    if(num % 5 === 0) {
+        console.log(`O numero ${num} é divisível por 5`)
+        naoDivisivel = false
+    }
+
+    if(num % 10 === 0) {
+        console.log(`O numero ${num} é divisível por 10`)
+        naoDivisivel = false
+    }
+    
+    if(naoDivisivel) {
+        console.log(`O número ${num} não é divisível por 2, 5 ou 10.`)
+    }
+}
+
+// verificaDivisor(7)
+
+// Exerc. 1.15
+const numEstaNoAlcance = (num) => {
+    num > 20 && num < 90 ? console.log(`O número ${num} está entre 21 e 89.`) : 
+        console.log(`O número ${num} não está entre 21 e 89.`)
+}
+
+numEstaNoAlcance(27)
