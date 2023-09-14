@@ -15,7 +15,7 @@ function multiplicar(n1, n2, n3) {
 
 // Exerc. 1.3
 
-function somar(n1, n2, n3, n4) {
+function somar(n1, n2, n3, n4) { // recebe somente números inteiros
     if(Number.isInteger(n1, n2, n3, n4)) {
         return console.log(n1 + n2 + n3 + n4)
     }
@@ -29,18 +29,18 @@ function somar(n1, n2, n3, n4) {
 // Exerc. 1.4
 
 function calcularMedia(a, b, c){
-    return console.log(Math.floor((a + b + c) / 3))
+    return console.log((a + b + c) / 3)
 }
 
 // calcularMedia(10, 5, 5)
 
 // Exerc. 1.5
 
-function calcularPeso(quilos){
+function converterQuilosEmGramas(quilos){
     return console.log(quilos * 1000)
-}
+} 
 
-// calcularPeso(85.7)
+// converterQuilosEmGramas(85.7)
 
 // Exerc. 1.6
 
@@ -62,8 +62,7 @@ function calcularPreco(etiqueta, pagamento){
 
 // Exerc. 1.7
 
-function calcularSalario(salarioAtual){
-
+function calcularSalario(salarioAtual){  // acrescenta 25% ao salário
     return console.log(salarioAtual + salarioAtual * 25 / 100)
 }
 
@@ -72,8 +71,7 @@ function calcularSalario(salarioAtual){
 // Exerc. 1.8
 
 function calcularSalario2(salarioAtual, porcentagem){
-
-    return console.log(salarioAtual + salarioAtual * porcentagem / 100)
+    return console.log(salarioAtual + salarioAtual * porcentagem / 100) 
 }
 
 // calcularSalario2(1000, 30)
@@ -99,11 +97,18 @@ function calcularSalario3(salarioAtual){
 function calcularDiasVividos(nome, dataNascimento) {
     const dataAtual = [12, 9, 2023]
     const diasNaoVividos = (30 - dataAtual[0]) + ((12 - dataAtual[1]) * 30)
+    /* primeiro, define-se a quantidade de dias *não vividos*, subtraindo 30(dias do mês) 
+    pelo dia atual e após isso, os dias restantes do ano. */
     const arrDataNascimento = dataNascimento.split('/')
     const dias = 30 - arrDataNascimento[0]
-    const meses = (12 - arrDataNascimento[1]) * 30
-    const anos = (2023 - arrDataNascimento[2]) * 365
-    const diasVividos = (dias + meses + anos) - diasNaoVividos
+    /* define-se a quantidade de dias *vividos* subtraindo 30(dias do mês)
+    pela data de nascimento */
+    const mesesEmDias = (12 - arrDataNascimento[1]) * 30
+    // define-se a quantidade de dias *vividos* correspondente aos meses em números de dias 
+    const anosEmDias = (2023 - arrDataNascimento[2]) * 365
+    // define-se a quantidade de dias *vividos* correspondente aos números de dias do ano
+    const diasVividos = (dias + mesesEmDias + anosEmDias) - diasNaoVividos
+    // soma-se os dias vividos e subtrai pelos restante dos dias do ano atual
     return console.log(`${nome} viveu ${diasVividos} dias`)
 }
 
@@ -152,7 +157,9 @@ function calcularNumero(a){
     let raizQ = Math.sqrt(a)
     let raizC = Math.cbrt(a)
 
-    return console.log(`Número ao quadrado: ${quadrado}. Número ao cubo ${cubo}. Raiz quadrada: ${raizQ}. Raíz cúbica: ${raizC}`)
+    return console.log(`
+    Número ao quadrado: ${quadrado}. Número ao cubo ${cubo}. Raiz quadrada: ${raizQ}. Raíz cúbica: ${raizC}
+    `)
 }
 
 // calcularNumero(8)
@@ -193,13 +200,15 @@ const cacularIdadeAnos = (anoNascimento, anoAtual) => {
 
 // Exerc. 1.19
 
-const calcularPorcentagemm = (valor, porcentagem) => {
+const calcularPorcentagemm = (valor, porcentagem) => { 
+    // função que calcula porcentagem para evitar repetição de código
     return valor * porcentagem / 100
 }
 const calculaValorCarro = (precoFabrica, percentualLucro, percentualImpostos) => {
-    const lucro = calcularPorcentagemm(precoFabrica, percentualLucro)
-    const impostos = calcularPorcentagemm(precoFabrica, percentualImpostos)
-    const precoFinal = precoFabrica + lucro + impostos
+    const lucro = calcularPorcentagemm(precoFabrica, percentualLucro) // cálculo da porcentagem de lucro
+    const impostos = calcularPorcentagemm(precoFabrica, percentualImpostos) // cálculo da porcentagem de impostos
+    const precoFinal = precoFabrica + lucro + impostos /* cálculo do preço final, considerando o preço de fábrica, 
+    a o lucro desejado e o imposto */
     console.log(`lucro: ${lucro}, impostos: ${impostos}, preço final: ${precoFinal}`)
 }
 // calculaValorCarro(100, 20, 10)
@@ -208,9 +217,9 @@ const calculaValorCarro = (precoFabrica, percentualLucro, percentualImpostos) =>
 
 const calcularValorHora = (horas, salMin) => {
 
-    let valorHoraTrab = salMin / 10
+    let valorHoraTrab = salMin / 10 // hora trabalhada equivale a 1 décimo do salário mínimo
     let salarioBruto = horas * valorHoraTrab
-    let imposto = salarioBruto * 3 / 100
+    let imposto = salarioBruto * 3 / 100 // o imposto adicionado ao salário é de 3%
 
     let salarioAReceber = salarioBruto - imposto
 
@@ -221,7 +230,7 @@ const calcularValorHora = (horas, salMin) => {
 
 // Exerc. 1.21
 
-const calcularHora = (hora, minutos) => {
+const converterHora = (hora, minutos) => {
     const horaParaMinutos = hora * 60
     const somaMinutos = horaParaMinutos + minutos
     const segundos = somaMinutos * 60
@@ -230,4 +239,4 @@ const calcularHora = (hora, minutos) => {
                 minutos totais: ${somaMinutos},
                 segundos totais: ${segundos}.`)
 }
-// calcularHora(1, 5)
+// converterHora(1, 5)
