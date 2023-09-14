@@ -183,4 +183,38 @@ const numEstaNoAlcance = (num) => {
         console.log(`O número ${num} não está entre 21 e 89.`)
 }
 
-numEstaNoAlcance(27)
+// numEstaNoAlcance(27)
+
+// Exerc. 1.15
+
+const verificaNumeros = num => {
+
+    const arrNums = [5, 200, 400]
+    let naoAtende = true
+    let fraseIgual
+    let fraseEntre
+    let fraseFinal
+
+    for(let i = 0; i < arrNums.length; i++){
+        if(num === arrNums[i]){
+            fraseIgual = `O número é igual a ${arrNums[i]} e`
+            naoAtende = false
+            break
+        } else {
+            fraseIgual = `O número não é igual a 5, 200 ou 400 e`
+        }
+    }
+    if(num >= 500 && num <= 1000){
+        fraseEntre = `está entre 500 e 1000`
+        naoAtende = false
+    } else {
+        fraseEntre = `não está entre 500 e 1000`
+    }
+    if(naoAtende){
+        console.log(`O número não atende aos critérios`)
+    }
+    fraseFinal = `${fraseIgual} ${fraseEntre}`
+    return console.log(fraseFinal)
+}
+
+verificaNumeros(1001)
