@@ -178,7 +178,7 @@ const numEstaNoAlcance = (num) => {
 
 // numEstaNoAlcance(27)
 
-// Exerc. 1.15
+// Exerc. 1.16
 
 const verificaNumeros = num => {
 
@@ -207,4 +207,17 @@ const verificaNumeros = num => {
     return console.log(fraseFinal)
 }
 
-verificaNumeros(1001)
+// verificaNumeros(1001)
+
+// Exerc. 1.17
+const operaNumeros = (num1, num2) => {
+  const menorNum = Math.min(num1, num2)
+  const maiorNum = Math.max(num1, num2)
+
+  return console.log(
+    `
+    O quadrado do número ${menorNum} é ${Math.pow(menorNum, 2)}. 
+    A raiz quadrada de ${maiorNum} é ${Math.sqrt(maiorNum)}.`)
+}
+
+// operaNumeros(2, 25)
