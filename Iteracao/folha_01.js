@@ -33,3 +33,69 @@ const iteraEntreValores = (numA, numB) => {
 }
 
 // iteraEntreValores(5, 5)
+
+// Exerc. 1.4
+
+const mostrarImpares = (numA, numB) => {
+
+    let incremento
+    
+    while(numA <= numB) {
+        incremento = numA++
+        if(incremento % 2 != 0){
+            console.log(incremento)
+        }
+    }
+}
+
+// mostrarImpares(3, 15)
+
+// Exerc. 1.5
+
+const mostrarPares = (numA, numB) => {
+
+    let incremento
+    let contador = 0
+    
+    while(numA <= numB) {
+        incremento = numA++
+        if(incremento % 2 == 0){
+            contador++
+            console.log(incremento)
+        }
+    }
+    console.log(`Quantidade de pares: ${contador}`)
+}
+
+// mostrarPares(3, 6)
+
+// Exerc. 1.6
+
+const mostrarDivisiveis3 = (numA, numB) => {
+
+    let incremento
+    
+    while(numA <= numB) {
+        incremento = numA++
+        if(incremento % 3 == 0){
+            console.log(incremento)
+        }
+    }
+}
+
+// mostrarDivisiveis3(3, 15)
+
+// Exerc. 1.7
+
+const exibirIncrementos = (inicial, incremento, numeroIn) => {
+
+    while(numeroIn >= 0){
+        console.log(inicial)
+        inicial += incremento
+        numeroIn--
+    }
+}
+
+exibirIncrementos(2, 4, 7)
+
+// Exerc. 1.8
