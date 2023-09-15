@@ -96,6 +96,30 @@ const exibirIncrementos = (inicial, incremento, numeroIn) => {
     }
 }
 
-exibirIncrementos(2, 4, 7)
+// exibirIncrementos(2, 4, 7)
 
 // Exerc. 1.8
+
+const mostraMaiorMenorNum = (...num) => {
+    let maiorNum = Math.max.apply(null, num)
+    let menorNum = Math.min.apply(null, num)
+    console.log(maiorNum, menorNum)
+}
+
+// mostraMaiorMenorNum(1, 3, 5, 2, 9)
+
+// Exerc. 1.9
+
+const tresMaioresDigitados = (...num) => {
+    // let maiorNum;
+    // for(let i = 0; i < num.length; i++) {
+    //     if(num[i] > num[i+1]) {
+    //         maiorNum = num[i]
+    //     }
+    // }
+    // console.log(maiorNum)
+
+    let ordenados = num.sort((a, b) => { return a - b })
+    //CONTINUA
+}
+tresMaioresDigitados(3, 4, 1, 8, 2, 9, 5)
