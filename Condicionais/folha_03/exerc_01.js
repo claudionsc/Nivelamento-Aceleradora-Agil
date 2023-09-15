@@ -154,20 +154,13 @@ const maiorParaMenor = (a, b, c) => {
 
 const verificaDivisor = (num) => {
     let naoDivisivel = true
+    const arr = [2, 5, 10]
 
-    if(num % 2 === 0) {
-        console.log(`O numero ${num} é divisível por 2`)
-        naoDivisivel = false
-    }
-
-    if(num % 5 === 0) {
-        console.log(`O numero ${num} é divisível por 5`)
-        naoDivisivel = false
-    }
-
-    if(num % 10 === 0) {
-        console.log(`O numero ${num} é divisível por 10`)
-        naoDivisivel = false
+    for(let i = 0; i <arr.length; i++){
+        if(num % arr[i] === 0){
+            console.log(`O número ${num} é divisível por ${arr[i]}`)
+            naoDivisivel = false
+        }
     }
     
     if(naoDivisivel) {
@@ -175,7 +168,7 @@ const verificaDivisor = (num) => {
     }
 }
 
-// verificaDivisor(7)
+// verificaDivisor(10)
 
 // Exerc. 1.15
 const numEstaNoAlcance = (num) => {
@@ -191,29 +184,26 @@ const verificaNumeros = num => {
 
     const arrNums = [5, 200, 400]
     let naoAtende = true
-    let fraseIgual
-    let fraseEntre
+    let fraseIgual = `O número não é igual a 5, 200 ou 400 e`
+    let fraseEntre = `não está entre 500 e 1000`
     let fraseFinal
 
     for(let i = 0; i < arrNums.length; i++){
         if(num === arrNums[i]){
             fraseIgual = `O número é igual a ${arrNums[i]} e`
             naoAtende = false
-            break
-        } else {
-            fraseIgual = `O número não é igual a 5, 200 ou 400 e`
-        }
+        } 
     }
     if(num >= 500 && num <= 1000){
         fraseEntre = `está entre 500 e 1000`
         naoAtende = false
-    } else {
-        fraseEntre = `não está entre 500 e 1000`
-    }
+    } 
+
     if(naoAtende){
-        console.log(`O número não atende aos critérios`)
+        fraseFinal = `O número não atende aos critérios`
+    } else {
+        fraseFinal = `${fraseIgual} ${fraseEntre}`
     }
-    fraseFinal = `${fraseIgual} ${fraseEntre}`
     return console.log(fraseFinal)
 }
 
