@@ -247,3 +247,9 @@ const lerNumeros = (...num) => {
 }
 
 // lerNumeros(2, 3, 4, 12, 5, 8, 3, 5, 0, 1)
+
+// Exerc. 1.16 PULADA pois não foi possível entender o enunciado
+
+// Exerc. 1.17
+
+
