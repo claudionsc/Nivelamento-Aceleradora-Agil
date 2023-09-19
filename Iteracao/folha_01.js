@@ -252,4 +252,11 @@ const lerNumeros = (...num) => {
 
 // Exerc. 1.17
 
+const lerNome = (nome, media) => {
 
+    if(nome === 'fim'){
+        return
+    }
+
+    
+}
