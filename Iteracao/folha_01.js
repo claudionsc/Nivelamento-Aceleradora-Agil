@@ -127,7 +127,7 @@ const lerPares = (...pares) => {
     contador = pares[i][0];
     par = contador;
     for (let j = 0; j < pares[i].length; j++) {
-      while (contador <= pares[i][1]) {
+      while (contador < pares[i][1]) {
         //   console.log(` ${i} Resultado: ${par} - Contador: ${contador}`);
         contador++;
         par += contador;
@@ -137,7 +137,7 @@ const lerPares = (...pares) => {
   }
 };
 
-// lerPares([2, 4], [1, 3], [4, 5], [8, 5]);
+// lerPares([2, 4], [1, 3], [4, 60], [6, 6], [8, 5]);
 
 // Exerc. 1.11
 
@@ -210,3 +210,40 @@ const retornarMultiplos = (...num) => {
     console.log(`${a.length}, ${b.length}`)
 }
 // retornarMultiplos(10, 12, 1, 7, 30, 18, -1, 4, 40, 9)
+
+// Exerc. 1.15
+
+const lerNumeros = (...num) => {
+
+    
+    let pares = 0
+    let impares = 0
+    let mediaPares = 0
+    let mediaGeral = 0
+
+    for(let i = 0; i < num.length; i++){
+        if(num[i] === 0){
+            break
+        } else{
+            if(num[i] % 2 == 0){
+                pares++
+                mediaPares = (mediaPares + num[i]) / pares
+            }
+            if(num[i] % 2 !== 0){
+                impares++
+            }
+            mediaGeral += num[i]
+        }
+    }
+    mediaGeral /= num.length
+
+    console.log(`
+    Quantidade de pares: ${pares}
+    Quantidade de ímpares: ${impares}
+    Média de números pares: ${mediaPares}
+    Média geral: ${mediaGeral}
+    `)
+    
+}
+
+// lerNumeros(2, 3, 4, 12, 5, 8, 3, 5, 0, 1)
