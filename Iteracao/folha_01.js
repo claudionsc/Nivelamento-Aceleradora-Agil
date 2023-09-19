@@ -122,4 +122,5 @@ const tresMaioresDigitados = (...num) => {
     let ordenados = num.sort((a, b) => { return a - b })
     //CONTINUA
 }
-tresMaioresDigitados(3, 4, 1, 8, 2, 9, 5)
+// tresMaioresDigitados(3, 4, 1, 8, 2, 9, 5)
+
