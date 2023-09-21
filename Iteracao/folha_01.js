@@ -273,4 +273,79 @@ const convertePolegada = () => {
   }
 }
 
-convertePolegada()
+// convertePolegada()
+
+// Exerc. 1.19
+
+const tabuada = num => {
+
+  for(let i = 1; i <= 10; i++){
+    console.log(`${num} * ${i} = ${num*i}`)
+  }
+  
+}
+
+// tabuada(72)
+
+// Exerc. 1.20
+
+const quadradosPerfeitos = (...num) => {
+
+  let contador = 0
+  let sqrt
+
+  for(let i = 0; i < num.length; i++){
+
+    if(num[i] === 0){
+      break
+    }
+
+      sqrt = Math.sqrt(num[i])
+    
+    if(Number.isInteger(sqrt)){
+      contador++
+    }
+  }
+  console.log(`Foram lido(s) ${contador} quadrado(s) perfeito(s)`)
+  
+}
+
+// quadradosPerfeitos(81, 25, 100, 0, 9)
+
+// Exerc. 1.21
+
+function isPrime(number) {
+
+
+  
+  if (number <= 1) {
+    return console.log(`${number} não é primo.`);
+;
+  }
+
+  if (number <= 3) {
+    return console.log(`${number} é primo.`);
+  }
+
+  // Verificando divisibilidade por 2 ou 3
+  if (number % 2 === 0 || number % 3 === 0) {
+    return   console.log(`${number} não é primo.`);
+;
+  }
+
+  // Verificando divisibilidade por outros números ímpares
+  for (let i = 5; i * i <= number; i += 6) {
+    if (number % i === 0 ||  number % (i + 2) === 0) {
+      return console.log(`${number} não é primo.`);
+      ;
+    }
+  }
+
+  return console.log(`${number} é primo.`);
+  ;
+}
+
+isPrime(2)
+
+
+
