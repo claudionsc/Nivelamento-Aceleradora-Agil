@@ -314,38 +314,57 @@ const quadradosPerfeitos = (...num) => {
 
 // Exerc. 1.21
 
-function isPrime(number) {
-
-
-  
+const ePrimo = (number) => {
   if (number <= 1) {
-    return console.log(`${number} não é primo.`);
-;
+    return console.log(`${number} não é primo.`)
   }
 
   if (number <= 3) {
-    return console.log(`${number} é primo.`);
+    return console.log(`${number} é primo.`)
   }
 
-  // Verificando divisibilidade por 2 ou 3
+  // Verifica divisibilidade por 2 ou 3
   if (number % 2 === 0 || number % 3 === 0) {
-    return   console.log(`${number} não é primo.`);
-;
+    return   console.log(`${number} não é primo.`)
   }
 
-  // Verificando divisibilidade por outros números ímpares
+  // Verifica divisibilidade por outros números ímpares
   for (let i = 5; i * i <= number; i += 6) {
     if (number % i === 0 ||  number % (i + 2) === 0) {
-      return console.log(`${number} não é primo.`);
-      ;
+      return console.log(`${number} não é primo.`)
     }
   }
-
-  return console.log(`${number} é primo.`);
-  ;
+  return console.log(`${number} é primo.`)
 }
 
-isPrime(2)
+// ePrimo(2)
 
+// Exerc. 1.22
 
+const quociente = (dividendo, divisor) => {
+  let dividendoAlterado = dividendo
+  let contador = 0
+  while(dividendoAlterado > 0) {
+    dividendoAlterado -= divisor
+    contador++
+  }
+  console.log(`O quociente de ${dividendo} é ${contador}`)
+}
 
+// quociente(61, 5)
+
+// Exerc. 1.23
+
+const raizQuadrada = (num) => {
+  let contador = 0
+  let numero = num
+  for(let i = 1; i <= numero; i++) {
+    if(i % 2 != 0) {
+      numero -= i
+      contador++
+    }
+  }
+  console.log(`A raiz quadrada de ${num} é ${contador}.`)
+}
+
+raizQuadrada(225)
