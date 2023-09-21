@@ -252,11 +252,25 @@ const lerNumeros = (...num) => {
 
 // Exerc. 1.17
 
-const lerNome = (nome, media) => {
-
-    if(nome === 'fim'){
-        return
-    }
-
-    
+const lerNome = (...dados) => {
+  let qtdadeAlunos = 0
+  for(let i = 0; i < dados.length; i+=2) {
+    if(dados[i] === 'fim'){ break }
+    console.log(`Nome: ${dados[i]}, média: ${dados[i+1]}`)
+    qtdadeAlunos++
+  }
+  console.log(`Quantidade de alunos: ${qtdadeAlunos}`)
 }
+// lerNome("Beto", 7, "Carol", 8, "Carina", 10, "fim", 10)
+
+
+// Exerc. 1.18
+
+const convertePolegada = () => {
+  const polegada = 2.54
+  for(i = 1; i <= 20; i++) {
+    console.log(`${i} polegada(s) em centímetros é ${i * polegada}`)
+  }
+}
+
+convertePolegada()
