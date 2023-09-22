@@ -367,4 +367,53 @@ const raizQuadrada = (num) => {
   console.log(`A raiz quadrada de ${num} é ${contador}.`)
 }
 
-raizQuadrada(225)
+// raizQuadrada(225)
+
+// Exerc. 1.24
+
+const contarNegativos = () => {
+
+  let a = [-1, -2, 3, -4, -5]
+  let contador = 0
+
+  for(let i = 0; i < a.length; i++){
+    if(a[i] < 0){
+      contador++
+    }
+  }
+
+  console.log(`São ${contador} números negativos`)
+  
+}
+
+// contarNegativos()
+
+// Exerc. 1.25
+
+const calcularSalarios = (...funcionarios) => {
+
+  let valorHora = 26.9
+  let salarioBruto
+  let salarioLiquido
+  let masculino = []
+  let feminino = []
+  let funcionario 
+
+  for(let i = 0; i < funcionarios.length; i++){
+    funcionario = funcionarios[i]
+    
+    salarioBruto = funcionarios[3] * valorHora
+    console.log(salarioBruto)
+    
+    // for(let j = 0; j < funcionario.length; j++){
+    //   console.log(funcionario[j])
+    // }
+    if(funcionarios === -11){
+      console.log('Funcionou')
+    }
+  }
+
+  
+}
+
+calcularSalarios([10, 'M', 220], [11, 'F', 205])
