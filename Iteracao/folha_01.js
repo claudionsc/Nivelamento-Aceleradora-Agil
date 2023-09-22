@@ -399,18 +399,13 @@ const calcularSalarios = (...funcionarios) => {
   let feminino = []
   let funcionario 
 
+
   for(let i = 0; i < funcionarios.length; i++){
-    funcionario = funcionarios[i]
-    
-    salarioBruto = funcionarios[3] * valorHora
-    console.log(salarioBruto)
-    
-    // for(let j = 0; j < funcionario.length; j++){
-    //   console.log(funcionario[j])
-    // }
-    if(funcionarios === -11){
-      console.log('Funcionou')
+
+    for(let j = 0; j < funcionarios[i].length; j++) {
+      salarioBruto = funcionarios[i][2] * valorHora
     }
+    console.log(salarioBruto)
   }
 
   
