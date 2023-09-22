@@ -401,25 +401,29 @@ const calcularSalarios = (...funcionarios) => {
 
   for(let i = 0; i < funcionarios.length; i++){
     
-      salarioBruto = funcionarios[i][2] * valorHora
+    salarioBruto = funcionarios[i][2] * valorHora
 
-      if(funcionarios[i][0] === -11){
-        return
-      } else if(funcionarios[i][1] === 'M'){
-        salarioLiquido = salarioBruto - (salarioBruto * 10 / 100)
-        masculinoS.push(salarioLiquido)
-      } else if(funcionarios[i][1] === 'F'){
-        salarioLiquido = salarioBruto - (salarioBruto * 6 / 100)
-        femininoS.push(salarioLiquido)
-      }
+    if(funcionarios[i][0] === -11){
+      break
+    } else if(funcionarios[i][1] === 'M'){
+      salarioLiquido = salarioBruto - (salarioBruto * 10 / 100)
+      masculinoS.push(salarioLiquido)
+    } else if(funcionarios[i][1] === 'F'){
+      salarioLiquido = salarioBruto - (salarioBruto * 6 / 100)
+      femininoS.push(salarioLiquido)
+    }
+    console.log( `
+      O salário bruto do funcionário de código ${funcionarios[i][0]}, 
+      gênero ${funcionarios[i][1]} e com ${funcionarios[i][2]} horas trabalhadas é: R$ ${salarioBruto.toLocaleString()}.
+      O salário líquido resultou em R$ ${salarioLiquido.toLocaleString()}.`)
   }
 
   let mediaMasculina =  masculinoS.reduce((acumulador, valor) => { return acumulador + valor }) / 2
   let mediaFeminina =  femininoS.reduce((acumulador, valor) => { return acumulador + valor }) / 2
-  console.log(mediaMasculina)
-  console.log(mediaFeminina)
-
+  console.log(`
+    A média do salário líquido feminino foi de R$ ${mediaFeminina.toLocaleString()} 
+    e do masculino foi de ${mediaMasculina.toLocaleString()}`)
   
 }
 
-calcularSalarios([10, 'M', 220], [11, 'M', 205], [10, 'F', 230], [11, 'F', 215], [-11, 'M', 0])
+calcularSalarios([1, 'M', 220], [2, 'M', 205], [3, 'F', 230], [4, 'F', 215], [-11, 'M', 0])
