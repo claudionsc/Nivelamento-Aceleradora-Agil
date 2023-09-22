@@ -464,4 +464,21 @@ const pesquisa = (...dados) => {
       `)
 };
 
-pesquisa([2000, 1], [2500, 1], [3200, 2], [4500, 3], [-1100, 0], [5000, 4]);
+// pesquisa([2000, 1], [2500, 1], [3200, 2], [4500, 3], [-1100, 0], [5000, 4]);
+
+// Exerc. 1.27
+
+const calculaAltura = () => {
+  let alturaChico = 150
+  let alturaZe = 110
+  let anos = 0
+
+  while(alturaChico > alturaZe) {
+    alturaChico += 2
+    alturaZe += 3
+    anos++
+  }
+  console.log(anos)
+}
+
+// calculaAltura()
