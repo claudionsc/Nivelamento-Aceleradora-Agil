@@ -395,20 +395,31 @@ const calcularSalarios = (...funcionarios) => {
   let valorHora = 26.9
   let salarioBruto
   let salarioLiquido
-  let masculino = []
-  let feminino = []
-  let funcionario 
+  let masculinoS = []
+  let femininoS = []
 
 
   for(let i = 0; i < funcionarios.length; i++){
-
-    for(let j = 0; j < funcionarios[i].length; j++) {
+    
       salarioBruto = funcionarios[i][2] * valorHora
-    }
-    console.log(salarioBruto)
+
+      if(funcionarios[i][0] === -11){
+        return
+      } else if(funcionarios[i][1] === 'M'){
+        salarioLiquido = salarioBruto - (salarioBruto * 10 / 100)
+        masculinoS.push(salarioLiquido)
+      } else if(funcionarios[i][1] === 'F'){
+        salarioLiquido = salarioBruto - (salarioBruto * 6 / 100)
+        femininoS.push(salarioLiquido)
+      }
   }
+
+  let mediaMasculina =  masculinoS.reduce((acumulador, valor) => { return acumulador + valor }) / 2
+  let mediaFeminina =  femininoS.reduce((acumulador, valor) => { return acumulador + valor }) / 2
+  console.log(mediaMasculina)
+  console.log(mediaFeminina)
 
   
 }
 
-calcularSalarios([10, 'M', 220], [11, 'F', 205])
+calcularSalarios([10, 'M', 220], [11, 'M', 205], [10, 'F', 230], [11, 'F', 215], [-11, 'M', 0])
