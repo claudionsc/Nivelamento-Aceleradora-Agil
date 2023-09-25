@@ -139,4 +139,32 @@ const gerarRelatorio = (codProduto, qtdadeVendida, valorObjeto) => {
 
 // gerarRelatorio([1, 12, 8, 3], [12, 58, 44, 27], [2, 6, 8, 4])
 
-// Exerc.08
+// Exerc.08 - CONTINUA
+
+const vendas = () => {
+  let nomeProduto = ['Arroz', 'Feijão', 'Macarrão', 'Carne', 'Queijo', 'Leite', 'Frutas', 'Verduras', 'Higiene', 'Limpeza',
+  'Combustível', 'Transporte', 'Aluguel', 'Contas', 'Educação', 'Saúde', 'Lazer', 'Outros']
+
+  let custoProduto = [20, 15, 5, 30, 28, 10, 15, 20, 10, 15,
+    50, 70, 500, 100, 200, 500, 100, 50, 200]
+
+  let valorVendaProduto = [25, 20, 10, 35, 31, 15, 25, 30, 15, 25,
+      60, 80, 600, 120, 240, 600, 120, 60, 240]
+
+  let lucroProduto = 0
+
+  let procentagemLucro = 0
+
+  for(let i = 0; i < custoProduto.length; i++){
+    lucroProduto = valorVendaProduto[i] - custoProduto[i]
+    procentagemLucro = (valorVendaProduto[i] / 100) * 10
+    console.log(` ${i} 10% ${procentagemLucro}, Lucro: ${lucroProduto}`)
+
+    if(lucroProduto < procentagemLucro){
+      // console.log(nomeProduto[i], custoProduto[i], valorVendaProduto[i])
+    }
+  }
+
+}
+
+vendas()
