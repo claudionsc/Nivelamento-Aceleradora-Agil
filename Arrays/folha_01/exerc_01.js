@@ -107,4 +107,36 @@ const verficarNotas = () => {
   console.log(`São ${contador} notas que atendem às condições exigidas`)
 }
 
-verficarNotas()
+// verficarNotas()
+
+// Exerc.07
+
+const gerarRelatorio = (codProduto, qtdadeVendida, valorObjeto) => {
+  let formataBRL = {style: 'currency', currency: 'BRL'}
+  let qtdadeMaisVendida = 0
+  let valorMaisVendido
+  let codMaisVendido
+
+  for(let i = 0; i < valorObjeto.length; i++) {
+    console.log(`
+    Item de código: ${codProduto[i]}; 
+    Quantidade: ${qtdadeVendida[i]}; 
+    Valor unitário: ${valorObjeto[i].toLocaleString('pt-BR', formataBRL)}; 
+    Valor total: ${(qtdadeVendida[i] * valorObjeto[i]).toLocaleString('pt-BR', formataBRL)};
+    O valor da comissão será de: ${((qtdadeVendida[i] * valorObjeto[i]) / 100 * 5)
+      .toLocaleString('pt-BR', formataBRL)}`)
+
+    if(qtdadeVendida[i] > qtdadeMaisVendida) {
+      qtdadeMaisVendida = qtdadeVendida[i]
+      valorMaisVendido = valorObjeto[i]
+      codMaisVendido = codProduto[i]
+    }
+  }
+  console.log(`
+  O código do produto mais vendido é: ${codMaisVendido}, 
+  com valor de ${valorMaisVendido.toLocaleString('pt-BR', formataBRL)}.`)
+}
+
+// gerarRelatorio([1, 12, 8, 3], [12, 58, 44, 27], [2, 6, 8, 4])
+
+// Exerc.08
