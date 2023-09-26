@@ -179,4 +179,46 @@ const vendas = () => {
   })
 }
 
-vendas()
+// vendas()
+
+// Exerc.09
+
+const verificarPontuacao = (nomes, pontos) => {
+  nomes.forEach((nome, index) => {
+    if(pontos[index] > 70) {
+      console.log(nome)
+    }
+  })
+}
+
+let nomes = ["Ana", "Maria", "Paulo", "Juca", "Pedro"]
+let pontos = [75, 67, 92, 54, 86]
+
+// verificarPontuacao(nomes, pontos)
+
+// Exerc.10
+
+const superiorACinquenta = (listaNumeros) => {
+  let nenhumNumero = true
+  listaNumeros.forEach((numero, index) => {
+    if(numero > 50) {
+      console.log(`O numero ${numero} é maior que 50 e está na posição ${index}.`)
+      nenhumNumero = false
+    }
+  })
+
+  if(nenhumNumero) console.log("Não há nenhum número maior que 50.")
+}
+
+let numeros = [75, 20, 67, 55, 92, 32, 40, 54, 86, 88]
+
+// superiorACinquenta(numeros)
+
+// Exerc.11
+
+const verificarGabarito = (gabarito) => {
+
+}
+
+
+let gabarito = ['a', 'b', 'a', 'e', 'd', 'b', 'c', 'a']
