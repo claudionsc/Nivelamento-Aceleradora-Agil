@@ -256,5 +256,75 @@ let respostasAlunos = [['a', 'b', 'c', 'd', 'e', 'f', 'c', 'a'],
               
 let codAlunos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-verificarGabarito(gabarito, codAlunos, respostasAlunos)
+// verificarGabarito(gabarito, codAlunos, respostasAlunos)
+
+// Exerc.12
+
+const verificarNumero = (numero) => {
+  if(numero < 0) return
+  let contem = false
+
+  let array = [2, 20, 5, 4, 9, 12, 78, 43, 56, 12,
+              87, 44, 88, 23, 29, 34, 82, 12, 73, 50]
+
+  array.forEach((num) => {
+    if(num === numero) {
+      contem = true
+      return
+    }
+  })
+
+  let mensagem = `O número ${numero}`
+  contem ? console.log(`${mensagem} está contido no vetor.`) : 
+           console.log(`${mensagem} não está contido no vetor.`)
+}
+// verificarNumero(25)
+
+// Exerc.13
+
+const verificarLocacoes = (nomesClientes, qtdadeDvdLocados) => {
+  let dvdGratis = 0
+  for(let i = 0; i < nomesClientes.length; i++) {
+    dvdGratis = Math.floor(qtdadeDvdLocados[i] / 10) //3
+    console.log(`${nomesClientes[i]} obteve ${dvdGratis} dvd(s) grátis`)
+  }
+}
+
+let nomesClientes = ["Ana", "Maria", "Paulo", "Juca", "Pedro", "Marcia", "Teo", "Laura"]
+let qtdadeDvdLocados = [30, 14, 45, 28, 42, 15, 9, 55]
+
+// verificarLocacoes(nomesClientes, qtdadeDvdLocados)
+
+// Exerc.14
+
+const verificarRepeticoes = () => {
+  const vetorA = [5, 6, 5, 6, 1, 5, 6, 1, 6, 5] //5 4x, 6 4x, 1 2x
+  let contador = 0
+  
+  let contadorArray = []
+  let repetidos = []
+
+  for(let i = 0; i < vetorA.length; i++) {
+    for(let j = i; j < vetorA.length; j++) {
+      if(vetorA[i] === vetorA[j+1]) {
+        if(!repetidos.includes(vetorA[i])) {
+          repetidos.push(vetorA[i])
+        }
+        if(repetidos[i] !== vetorA[i]) {
+          contadorArray.push(vetorA[j+1])
+        }
+      }
+    }
+  }
+
+  console.log(contadorArray)
+  // console.log(novoArray)
+}
+ 
+verificarRepeticoes()
+
+
+
+
+
 
