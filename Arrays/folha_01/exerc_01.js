@@ -216,26 +216,24 @@ let numeros = [75, 20, 67, 55, 92, 32, 40, 54, 86, 88]
 
 // Exerc.11
 
-const verificarGabarito = (gabarito, codAlunos, respostas) => {
+const verificarGabarito = (gabarito, codAlunos, respostasAlunos) => {
+  let contador = 0
 
-  for(let i = 0; i < respostas.length; i++){
-    // console.log(respostas[i])
-    for(let j = 0; j < respostas[i].length; j++){
-
-      gabarito.forEach((gabarito, index) => {
-        if(respostas[i][j] == gabarito){
-          console.log(`Gabarito: ${gabarito} ${index}. Provas: ${respostas[i][j]}, ${i} ${j}`)
+  for(let i = 0; i < gabarito.length; i++){
+    for(let j = 0; j < respostasAlunos[i].length; j++){
+      for(let k = 0; k < gabarito.length; k++) {
+        if(respostasAlunos[i][j] == gabarito[k]) {
+          contador++
         }
-        // console.log(gabarito)
-      });
+      }
     }
   }
-
-
+  console.log(contador)
 }
 
 let gabarito = ['a', 'b', 'a', 'e', 'd', 'b', 'c', 'a']
-let respostas = [['a', 'b', 'c', 'd', 'e', 'f', 'c', 'a'],
+
+let respostasAlunos = [['a', 'b', 'c', 'd', 'e', 'f', 'c', 'a'],
                 ['f', 'e', 'd', 'c', 'b', 'a', 'b', 'a'],
                 ['b', 'f', 'e', 'd', 'c', 'a', 'c', 'a'],
                 ['c', 'b', 'f', 'e', 'd', 'a', 'a', 'a'],
@@ -243,9 +241,10 @@ let respostas = [['a', 'b', 'c', 'd', 'e', 'f', 'c', 'a'],
                 ['e', 'd', 'c', 'b', 'f', 'a', 'e', 'd'],
                 ['f', 'a', 'b', 'c', 'd', 'e', 'a', 'e'],
                 ['e', 'f', 'a', 'b', 'c', 'd', 'c', 'b'],
-                ['a', 'b', 'a', 'e', 'd', 'b', 'c', 'a']]
+                ['a', 'b', 'a', 'e', 'd', 'b', 'c', 'a'],
+                ['a', 'd', 'b', 'e', 'd', 'a', 'c', 'a']]
               
 let codAlunos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-verificarGabarito(gabarito, codAlunos, respostas)
+verificarGabarito(gabarito, codAlunos, respostasAlunos)
 
