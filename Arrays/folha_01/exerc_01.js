@@ -139,7 +139,7 @@ const gerarRelatorio = (codProduto, qtdadeVendida, valorObjeto) => {
 
 // gerarRelatorio([1, 12, 8, 3], [12, 58, 44, 27], [2, 6, 8, 4])
 
-// Exerc.08 - CONTINUA
+// Exerc.08 
 
 const vendas = () => {
   let nomeProduto = ['Arroz', 'Feijão', 'Macarrão', 'Carne', 'Queijo', 'Leite', 'Frutas', 'Verduras', 'Higiene', 'Limpeza',
@@ -148,23 +148,35 @@ const vendas = () => {
   let custoProduto = [20, 15, 5, 30, 28, 10, 15, 20, 10, 15,
     50, 70, 500, 100, 200, 500, 100, 50, 200]
 
-  let valorVendaProduto = [25, 20, 10, 35, 31, 15, 25, 30, 15, 25,
-      60, 80, 600, 120, 240, 600, 120, 60, 240]
+  let valorVendaProduto = [21, 20, 5.4, 32, 29.9, 13, 25, 32, 12, 18,
+      57, 78, 559, 260, 240, 600, 110, 75, 240]
 
   let lucroProduto = 0
 
-  let procentagemLucro = 0
+  let lucroDez = 0
+  let lucroDezTrinta = 0
+  let lucroMaiorTrinta = 0
 
   for(let i = 0; i < custoProduto.length; i++){
     lucroProduto = valorVendaProduto[i] - custoProduto[i]
-    procentagemLucro = (valorVendaProduto[i] / 100) * 10
-    console.log(` ${i} 10% ${procentagemLucro}, Lucro: ${lucroProduto}`)
 
-    if(lucroProduto < procentagemLucro){
-      // console.log(nomeProduto[i], custoProduto[i], valorVendaProduto[i])
+    if(lucroProduto <= (custoProduto[i] / 100) * 10){
+      lucroDez++
+    }
+
+    if(lucroProduto > (custoProduto[i] / 100) * 10 && lucroProduto < (custoProduto[i] / 100) * 30){
+      lucroDezTrinta++
+    }
+
+    if(lucroProduto > (custoProduto[i] / 100) * 30){
+      lucroMaiorTrinta++
     }
   }
-
+  console.table({
+      'Quantidade de produtos com lucros menores que 10%': lucroDez,
+      'Quantidade de produtos com lucros entre 10% e 30%': lucroDezTrinta,
+      'Quantidade de produtos com lucros maiores que 30%': lucroMaiorTrinta,
+  })
 }
 
 vendas()
