@@ -196,7 +196,7 @@ let pontos = [75, 67, 92, 54, 86]
 
 // verificarPontuacao(nomes, pontos)
 
-// Exerc.10
+// Exerc.10 - CONTINUA
 
 const superiorACinquenta = (listaNumeros) => {
   let nenhumNumero = true
@@ -217,18 +217,28 @@ let numeros = [75, 20, 67, 55, 92, 32, 40, 54, 86, 88]
 // Exerc.11
 
 const verificarGabarito = (gabarito, codAlunos, respostasAlunos) => {
+  debugger
   let contador = 0
+  let notasIndividuais = 0
+  let notasAlunos = []
 
-  for(let i = 0; i < gabarito.length; i++){
+  for(let i = 0; i < respostasAlunos.length; i++){
     for(let j = 0; j < respostasAlunos[i].length; j++){
+     
       for(let k = 0; k < gabarito.length; k++) {
-        if(respostasAlunos[i][j] == gabarito[k]) {
-          contador++
+        if(j === k){
+          // console.log(`Aluno: ${i} - ${gabarito[k]} (${k}), ${respostasAlunos[i][j]} (${j})`)
+          if(respostasAlunos[i][j] === gabarito[k]){
+            // console.log(respostasAlunos[i][j], i)
+            // notasAlunos.push(i)
+            contador = i
+            notasAlunos.push(contador)
+          }
         }
       }
     }
   }
-  console.log(contador)
+  console.log(notasAlunos)
 }
 
 let gabarito = ['a', 'b', 'a', 'e', 'd', 'b', 'c', 'a']
