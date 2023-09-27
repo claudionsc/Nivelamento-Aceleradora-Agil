@@ -395,3 +395,17 @@ let consumo = [12, 8, 13, 5, 9]
 // Exerc.16
 
 
+const inverterArray = () => {
+
+  let arr = [12, 8, 13, 5, 9, 2, 1, 90, 47, 36, 27, 49, 10, 38, 27, 22, 16, 24, 80, 100] 
+  
+  let menorNumero
+  
+  for(let i = 0; i < arr.length; i++){
+    
+  }
+
+
+}
+
+inverterArray()
