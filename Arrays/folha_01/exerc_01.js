@@ -397,9 +397,7 @@ let consumo = [12, 8, 13, 5, 9]
 const inverterArray = () => {
 
   let arr = [12, 8, 13, 5, 9, 2, 1, 90, 47, 36, 27, 49, 10, 38, 27, 22, 16, 24, 80, 100] 
-  
   let temp
-  debugger
 
   for(let i = 0; i < arr.length - 1; i++){
     let menorIndex = i
@@ -411,10 +409,36 @@ const inverterArray = () => {
     }
     temp = arr[i] 
     arr[i] = arr[menorIndex]
-    arr[menorIndex] = temp
-
-    }
+    arr[menorIndex] = temp   
     console.log(arr)
   }
+}
 
-  inverterArray()
+// inverterArray()
+
+// Exerc.17
+
+function bubbleSort() {
+  let arr = [15, 3, 7, 9, 12, 1, 6, 8, 10, 2, 14, 5, 11, 4, 13]
+
+  // Loop externo para percorrer todo o vetor
+  for (let i = 0; i < arr.length; i++) {
+    let trocas = false // variável para otimização
+    // Loop interno para comparar e trocar elementos adjacentes
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // Trocar os elementos
+        let temp = arr[j]
+        arr[j] = arr[j + 1]
+        arr[j + 1] = temp
+        trocas = true
+      }
+    }
+
+    // Se não houver trocas no loop interno, o vetor já está ordenado
+    if(!trocas) { break }
+  }
+  console.log("Vetor ordenado:", arr)
+}
+
+bubbleSort()
