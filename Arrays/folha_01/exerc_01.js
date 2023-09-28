@@ -66,7 +66,7 @@ let vetor = [
 
 // Exerc.05
 const vetorIntercalado = (vetorA, vetorB) => {
-  debugger
+  
   let arrayIntercalado = []
 
   for (let i = 0; i < vetorA.length; i++) {
@@ -394,18 +394,27 @@ let consumo = [12, 8, 13, 5, 9]
 
 // Exerc.16
 
-
 const inverterArray = () => {
 
   let arr = [12, 8, 13, 5, 9, 2, 1, 90, 47, 36, 27, 49, 10, 38, 27, 22, 16, 24, 80, 100] 
   
-  let menorNumero
-  
-  for(let i = 0; i < arr.length; i++){
-    
+  let temp
+  debugger
+
+  for(let i = 0; i < arr.length - 1; i++){
+    let menorIndex = i
+
+    for(let j = i+1; j < arr.length; j++){
+      if(arr[j] < arr[menorIndex]){
+        menorIndex = j
+      }
+    }
+    temp = arr[i] 
+    arr[i] = arr[menorIndex]
+    arr[menorIndex] = temp
+
+    }
+    console.log(arr)
   }
 
-
-}
-
-inverterArray()
+  inverterArray()
